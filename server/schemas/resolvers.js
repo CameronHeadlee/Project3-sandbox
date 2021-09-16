@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Products, Orders, Comments, Sold} = require('../models');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -13,6 +14,27 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    Products: async (parent, {name}) => {
+      const params = {};
+
+      if (name) {
+        params.name = {
+          $regex: name
+        };
+      }
+      return await Products.find(params).populate('shoes');
+    },
+    product: async (parent, { _id }) => {
+      return await Products.findById(_id).populate('shoes');
+    },
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: 'orders.products',
+          populate: 'shoes'
+        });
+      }
+    }
   },
 
   Mutation: {
