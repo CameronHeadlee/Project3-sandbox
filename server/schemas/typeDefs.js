@@ -12,9 +12,8 @@ const typeDefs = gql`
 
   type Comment { 
     _id: ID
-    commentText: String
+    commentText: String   
     commentAuthor: String
-    createdAt: String
   }
 
   type Product { 
