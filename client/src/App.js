@@ -7,6 +7,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import CommentList from './components/CommentList';
+import CommentForm from './components/CommentForm';
+
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -35,6 +38,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+
+    <CommentForm/>
+
     <CommentList/>
 
     </ApolloProvider>
