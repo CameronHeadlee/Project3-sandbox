@@ -13,7 +13,8 @@ const typeDefs = gql`
   type Comment { 
     _id: ID
     commentText: String
-    
+    commentAuthor: String
+    createdAt: String
   }
 
   type Product { 
@@ -47,6 +48,8 @@ const typeDefs = gql`
     me: User
     order(_id: ID!): order
     checkout(products: [ID]!): Checkout
+    comments:(username: String): Comment
+    comment(commentId: ID!): Comment
   }
 
   type Mutation {
