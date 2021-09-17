@@ -1,7 +1,4 @@
 import React from "react";
-// import ProductList from "../components/ProductList";
-// import CategoryMenu from "../components/CategoryMenu";
-// import Cart from "../components/Cart";
 import { useQuery } from '@apollo/client/link/context';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Container from 'react-bootstrap/Container';

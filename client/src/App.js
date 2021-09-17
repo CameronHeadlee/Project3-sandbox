@@ -4,12 +4,8 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-  useQuery,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import  ItemsContainer  from './components/ItemsContainer'
-import Container from 'react-bootstrap/Container'
-import{ QUERY_PRODUCTS } from './utils/queries'
 import Home from './pages/Home';
 
 // Construct our main GraphQL API endpoint
