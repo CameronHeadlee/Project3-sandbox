@@ -8,7 +8,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import  ItemsContainer  from './components/ItemsContainer'
 import Container from 'react-bootstrap/Container';
-
+import Navbar from './components/Navbar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,6 +40,8 @@ function App() {
     <Container>
     <ItemsContainer/>
     </Container>
+    <Navbar/>
+  
     </ApolloProvider>
   );
 }
