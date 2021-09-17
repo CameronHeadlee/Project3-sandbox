@@ -1,11 +1,11 @@
 const db = require('./connection');
-const { Products } = require('../models');
+const { Product } = require('../models');
 
 db.once('open', async () => {
   
   // await Product.deleteMany();
 
-  const products = await Products.insertMany([
+  const products = await Product.insertMany([
     {
       name: 'Tin of Cookies',
       description:

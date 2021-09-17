@@ -2,6 +2,6 @@ const Comments = require('./Comments');
 const Orders = require('./Orders');
 const Sold = require('./Sold');
 const User = require('./User');
-const Products = require('./Products')
+const Product = require('./Product')
 
-module.exports = { Comments, Orders, User, Sold, Products };
+module.exports = { Comments, Orders, User, Sold, Product };
