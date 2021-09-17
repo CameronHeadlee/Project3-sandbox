@@ -14,26 +14,12 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    Products: async (parent, {name}) => {
-      const params = {};
-
-      if (name) {
-        params.name = {
-          $regex: name
-        };
-      }
-      return await Products.find(params).populate('shoes');
+    products: async () => {
+      
+      return await Products.find();
     },
     product: async (parent, { _id }) => {
       return await Products.findById(_id).populate('shoes');
-    },
-    user: async (parent, args, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
-          populate: 'shoes'
-        });
-      }
     }
   },
 

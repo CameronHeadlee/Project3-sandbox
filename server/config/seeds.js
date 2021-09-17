@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { Products } = require('../models');
+const {  Products } = require('../models');
 
 db.once('open', async () => {
   
@@ -16,6 +16,7 @@ db.once('open', async () => {
       quantity: 500
     }   
   ]);
+
 
   console.log('products seeded');
 
