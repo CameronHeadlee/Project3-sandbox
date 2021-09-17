@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Container from 'react-bootstrap/Container';
 import ItemsContainer from '../components/ItemsContainer';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Home = () => {
   // Products
@@ -16,7 +18,6 @@ const Home = () => {
       {loading 
       ? <div>Im loading...</div>
       : <ItemsContainer data={data}/>}
-    
     </Container>
   );
 };

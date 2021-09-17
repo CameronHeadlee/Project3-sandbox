@@ -3,15 +3,22 @@ const {  Products } = require('../models');
 
 db.once('open', async () => {
   
-  await Product.deleteMany();
+  await Products.deleteMany();
 
-  const products = await Products.insertMany([
+  const product = await Products.insertMany([
     {
       name: 'Tin of Cookies',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      // category: categories[0]._id,
+      image: 'https://swoo.sh/2XrMVGY',
+      price: 2.99,
+      quantity: 500
+    },
+    {
+      name: 'Jordan',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'https://bit.ly/3CjDCIs',
       price: 2.99,
       quantity: 500
     }   
