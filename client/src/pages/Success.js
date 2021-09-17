@@ -14,9 +14,9 @@ function Success() {
 
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });
-        const productData = data.addOrder.products;
+        const productsData = data.addOrder.products;
 
-        productData.forEach((item) => {
+        productsData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
       }
