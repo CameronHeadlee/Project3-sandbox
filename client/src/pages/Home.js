@@ -1,24 +1,24 @@
 import React from "react";
-import { useQuery } from '@apollo/client/link/context';
+import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Container from 'react-bootstrap/Container';
 import ItemsContainer from '../components/ItemsContainer';
 
 const Home = () => {
-  //Products
-  const {data, loading, error } = useQuery(QUERY_PRODUCTS);
+  // Products
+  const {data, loading , error } = useQuery(QUERY_PRODUCTS);
   if (error)
-    console.log(error);
-  if (data)
-    console.log(data);
-
-    return(
-      <Container>
-        { loading
-        ? <div>I'm loading...</div>
-          : <ItemsContainer data={data}/>}
-      </Container>
-    )
+  console.log(error);
+  return (
+    <Container>
+      <h1>Welcome!</h1>
+      <p></p>
+      {loading 
+      ? <div>Im loading...</div>
+      : <ItemsContainer data={data}/>}
+    
+    </Container>
+  );
 };
 
 export default Home;

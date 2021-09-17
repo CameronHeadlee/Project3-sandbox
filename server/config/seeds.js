@@ -1,9 +1,9 @@
 const db = require('./connection');
-const { Product } = require('../models');
+const {  Product } = require('../models');
 
 db.once('open', async () => {
   
-  // await Product.deleteMany();
+  await Product.deleteMany();
 
   const products = await Product.insertMany([
     {
@@ -16,6 +16,7 @@ db.once('open', async () => {
       quantity: 500
     }   
   ]);
+
 
   console.log('products seeded');
 

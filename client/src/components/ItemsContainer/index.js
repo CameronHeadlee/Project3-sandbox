@@ -1,15 +1,13 @@
 import React from 'react';
 import  Card  from 'react-bootstrap/Card';
-import  Button  from 'react-bootstrap/Button';
-
-
+import  Button  from 'react-bootstrap/Button'
 export default function ItemsContainer (props) {
-    console.log(props.data.products); //gives us an object
+    console.log(props.data.products); 
     return (
         <>
-        {props.data.products.map(product => {
-          console.log(product);
-          <Card style={{ width: '18rem' }}>
+        {props.data.products.map( product => {
+          console.log(product)
+          return <Card style={{ width: '18rem' }}>
           <Card.Img variant="top" src="https://swoo.sh/2XrMVGY" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -19,7 +17,7 @@ export default function ItemsContainer (props) {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
-        })
+        }) 
         }
         </>
     )

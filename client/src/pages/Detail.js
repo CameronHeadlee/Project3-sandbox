@@ -18,7 +18,7 @@ function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
-  const [currentProduct, setCurrentProduct] = useState({});
+  const [currentProducts, setCurrentProducts] = useState({});
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -27,7 +27,7 @@ function Detail() {
   useEffect(() => {
     // already in global store
     if (products.length) {
-      setCurrentProduct(products.find((product) => product._id === id));
+      setCurrentProduct(products.find((products) => products._id === id));
     }
     // retrieved from server
     else if (data) {
@@ -36,8 +36,8 @@ function Detail() {
         products: data.products,
       });
 
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+      data.products.forEach((Products) => {
+        idbPromise('products', 'put', products);
       });
     }
     // get cache from idb
@@ -66,19 +66,19 @@ function Detail() {
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1 },
+        product: { ...currentProducts, purchaseQuantity: 1 },
       });
-      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+      idbPromise('cart', 'put', { ...currentProducts, purchaseQuantity: 1 });
     }
   };
 
   const removeFromCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
-      _id: currentProduct._id,
+      _id: currentProducts._id,
     });
 
-    idbPromise('cart', 'delete', { ...currentProduct });
+    idbPromise('cart', 'delete', { ...currentProducts });
   };
 
   return (
@@ -87,15 +87,15 @@ function Detail() {
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
 
-          <h2>{currentProduct.name}</h2>
+          <h2>{currentProducts.name}</h2>
 
-          <p>{currentProduct.description}</p>
+          <p>{currentProducts.description}</p>
 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+            <strong>Price:</strong>${currentProducts.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
             <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              disabled={!cart.find((p) => p._id === currentProducts._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
@@ -103,8 +103,8 @@ function Detail() {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
+            src={`/images/${currentProducts.image}`}
+            alt={currentProducts.name}
           />
         </div>
       ) : null}
