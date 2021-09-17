@@ -6,8 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import  ItemsContainer  from './components/ItemsContainer'
-import Container from 'react-bootstrap/Container';
+import Home from './pages/Home';
 
 
 // Construct our main GraphQL API endpoint
@@ -35,11 +34,10 @@ const client = new ApolloClient({
 });
 
 function App() {
+  
   return (
     <ApolloProvider client={client}>
-    <Container>
-    <ItemsContainer/>
-    </Container>
+      <Home/>
     </ApolloProvider>
   );
 }
