@@ -4,13 +4,9 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-  useQuery,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import  ItemsContainer  from './components/ItemsContainer'
-import Container from 'react-bootstrap/Container';
-import { QUERY_PRODUCTS } from './utils/queries';
-
+import Home from './pages/Home';
 
 
 // Construct our main GraphQL API endpoint
@@ -38,18 +34,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // Products
-  // const {data, loading , error } = useQuery(QUERY_PRODUCTS);
-  // if (error)
-  // console.log(error);
-  // if (data)
-  //   console.log(data);
-
+  
   return (
     <ApolloProvider client={client}>
-    <Container>
-    <ItemsContainer/>
-    </Container>
+      <Home/>
     </ApolloProvider>
   );
 }

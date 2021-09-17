@@ -3,7 +3,7 @@ const {  Products } = require('../models');
 
 db.once('open', async () => {
   
-  // await Product.deleteMany();
+  await Product.deleteMany();
 
   const products = await Products.insertMany([
     {
