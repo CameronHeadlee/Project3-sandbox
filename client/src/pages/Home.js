@@ -1,15 +1,23 @@
 import React from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
-import Cart from "../components/Cart";
+import { useQuery } from '@apollo/client';
+import { QUERY_PRODUCTS } from '../utils/queries';
+import Container from 'react-bootstrap/Container';
+import ItemsContainer from '../components/ItemsContainer';
 
 const Home = () => {
+  // Products
+  const {data, loading , error } = useQuery(QUERY_PRODUCTS);
+  if (error)
+  console.log(error);
   return (
-    <div className="container">
-      <CategoryMenu />
-      <ProductList />
-      <Cart />
-    </div>
+    <Container>
+      <h1>Welcome!</h1>
+      <p></p>
+      {loading 
+      ? <div>Im loading...</div>
+      : <ItemsContainer data={data}/>}
+    
+    </Container>
   );
 };
 

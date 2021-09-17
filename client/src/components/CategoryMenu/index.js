@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
@@ -12,7 +12,7 @@ import './style.css';
 // TODO: Add a comment describing the functionality of loadStripe
 // Your comment here
 // This returns a Promise that resolves with a newly created stripe object.
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
@@ -20,13 +20,13 @@ const Cart = () => {
 
   // TODO: Add a comment describing the functionality of the useEffect hook in this instance
   // setting up side effect to redirect using redirectToCHeckout function
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     stripePromise.then((res) => {
+  //       res.redirectToCheckout({ sessionId: data.checkout.session });
+  //     });
+  //   }
+  // }, [data]);
 
   // TODO: Add a comment describing what data we are watching and what work should be preformed if that data changes
   // Your comment here
@@ -59,16 +59,16 @@ const Cart = () => {
 
   // For each product in cart , the submit checkout function will display product, product id and quantity of product. The function will calculate total and then check to see youre logged in. ifo you 
   function submitCheckout() {
-    const productIds = [];
+    const productsIds = [];
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
+        productsIds.push(item._id);
       }
     });
 
     getCheckout({
-      variables: { products: productIds },
+      variables: { products: productsIds },
     });
   }
 
