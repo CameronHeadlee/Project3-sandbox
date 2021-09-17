@@ -41,7 +41,7 @@ const typeDefs = gql`
 
 
   type Query {
-    products(category: ID, name: String): [Product]
+    products(price: Float): [Product]
     product(_id: ID!): Product
     me: User
     order(_id: ID!): Order
