@@ -15,7 +15,7 @@ const Home = () => {
       <p></p>
       {loading 
       ? <div>Im loading...</div>
-      : <ItemsContainer data={data}/>}
+      : <ItemsContainer response={data, loading, error}/>}
     
     </Container>
   );
