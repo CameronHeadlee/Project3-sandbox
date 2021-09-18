@@ -9,14 +9,20 @@ export const QUERY_ME = gql`
     }
   }
 `;
-
 export const QUERY_PRODUCTS = gql`
-  { products { 
-  	_id
+  { products {
+    _id
     name
     description
     image
     price
-		}
+    }
   }
+`;
+export const QUERY_CLOSET = gql`
+  { closet
+    {
+    _id
+    }
+}
 `;

@@ -5,7 +5,7 @@ db.once('open', async () => {
   
   await Products.deleteMany();
 
-  const product = await Products.insertMany([
+  const products = await Products.insertMany([
     {
       name: 'New Balance 990v3 X Joe Freshgoods Outside Clothes',
       description:
