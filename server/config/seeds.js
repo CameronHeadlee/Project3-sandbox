@@ -131,8 +131,26 @@ db.once('open', async () => {
     firstName: 'Elijah',
     lastName: 'Holt',
     username: 'EHolt123',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    email: 'elijah@testmail.com',
+    password: 'password12345',
+    orders: [
+      {
+        product: [products]
+      }
+    ]
+  });
+
+  await User.create({
+    firstName: 'Khadra',
+    lastName: 'Shegow',
+    username: 'KSheg123',
+    email: 'khadra@testmail.com',
+    password: 'password12345',
+    orders: [
+      {
+        product: [products]
+      }
+    ]
   });
 
   console.log('users seeded');
