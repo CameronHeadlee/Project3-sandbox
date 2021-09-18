@@ -1,58 +1,45 @@
-import React from "react";
-import Auth from "../../utils/auth";
-// import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Nav() {
 
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">Sign
-            {/* <Link to="/orderHistory">
-              Order History
-            </Link> */}
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            {/* <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a> */}
-          </li>
+function Navigation({currentPage, handlePageChange}) {
+    return (
+
+        <ul className='nav navigation justify-content-end'>
+            <li className='nav-item'>
+                <Link to="/"
+                   
+                    className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
+                >
+                    Home
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to="/Closets"
+                    
+                    className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
+                >
+                    Closets
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to="/Login"
+                    
+                    className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+                > 
+                    Login
+                </Link>
+            </li>
+            <li className='nav-item'>
+                <Link to="/Signup"
+                    
+                    className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
+                >
+                    Signup
+                </Link>
+            </li>
         </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            {/* <Link to="/signup">
-              Signup
-            </Link> */}
-          </li>
-          <li className="mx-1">
-            {/* <Link to="/login">
-              Login
-            </Link> */}
-          </li>
-        </ul>
-      );
-    }
-  }
-
-  return (
-    <header className="flex-row px-1">
-      <h1>
-        {/* <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
-        </Link> */}
-      </h1>
-
-      <nav>
-        {showNavigation()}
-      </nav>
-    </header>
-  );
+    );
 }
 
-export default Nav;
+export default Navigation;

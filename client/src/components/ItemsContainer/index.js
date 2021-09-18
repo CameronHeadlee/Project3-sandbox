@@ -1,25 +1,36 @@
 import React from 'react';
 import  Card  from 'react-bootstrap/Card';
-import  Button  from 'react-bootstrap/Button'
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 export default function ItemsContainer (props) {
-    console.log(props.data?.products); 
-    return (
-        <>
-        {props.data?.products.map( product => {
+    console.log(props.data.products); 
+      return (
+        <div className="d-flex align-content-center justify-content-between flex-wrap" >
+        {props.data.products.map( product => {
           console.log(product)
-          return <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://swoo.sh/2XrMVGY" />
+          return <Card className="row p-5 m-5" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={product.image} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{product.name}</Card.Title>
             <Card.Text>
-              {product.name}
+              {product.description}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Price: {product.price}</ListGroupItem>
+            <ListGroupItem>In Stock: {product.quantity}</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">My Closet</Card.Link>
           </Card.Body>
         </Card>
+        
         }) 
         }
-        </>
+       </div>
+       
+        
+     
     )
-}
-
+  }   
