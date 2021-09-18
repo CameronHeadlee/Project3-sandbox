@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import Container from 'react-bootstrap/Container';
 import ItemsContainer from '../components/ItemsContainer';
+import { Link } from 'react-router-dom';
 
 const styles = {
   container: {
@@ -18,6 +19,8 @@ const Closets = () => {
   if (error)
   console.log(error);
   return (
+    <Link to="/closets">
+      <h2>My Closet</h2>
     <div style={styles.container}>
       <Container>
       {loading 
@@ -25,5 +28,8 @@ const Closets = () => {
       : <ItemsContainer  data={data}/>}
       </Container>
     </div>
+    </Link>
   )
 }
+
+export default Closets;
