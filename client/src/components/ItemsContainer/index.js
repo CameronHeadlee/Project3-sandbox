@@ -5,7 +5,7 @@ export default function ItemsContainer (props) {
     console.log(props.data?.products); 
     return (
         <>
-        {props.data?.product.map( product => {
+        {props.data?.products.map( product => {
           console.log(product)
           return <Card style={{ width: '18rem' }}>
           <Card.Img variant="top" src="https://swoo.sh/2XrMVGY" />

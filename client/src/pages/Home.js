@@ -6,7 +6,7 @@ import ItemsContainer from '../components/ItemsContainer';
 
 const Home = () => {
   // Products
-  const {data, loading , error } = useQuery(QUERY_PRODUCTS);
+  const {data, loading , error} = useQuery(QUERY_PRODUCTS);
   if (error)
   console.log(error);
   return (
@@ -15,7 +15,8 @@ const Home = () => {
       <p></p>
       {loading 
       ? <div>Im loading...</div>
-      : <ItemsContainer response={data, loading, error}/>}
+      // eslint-disable-next-line
+      : <ItemsContainer response={data, loading, error} />};
     
     </Container>
   );
