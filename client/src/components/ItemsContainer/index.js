@@ -4,7 +4,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function ItemsContainer (props) {
-    console.log(props.data?.products); 
+    // console.log(props.data?.products); 
       return (
         <div className="d-flex align-content-center justify-content-between flex-wrap" >
         {props.data?.products.map( product => {

@@ -15,9 +15,9 @@ const styles = {
 
 const Closets = () => {
   // Products
-  const {data, loading, error } = useQuery(QUERY_PRODUCTS);
-  if (error)
-  console.log(error);
+  const {data, loading } = useQuery(QUERY_PRODUCTS);
+  // if (error)
+  // console.log(error);
   return (
     <Link to="/closets">
       <h2>My Closet</h2>
