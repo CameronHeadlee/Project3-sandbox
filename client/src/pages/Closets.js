@@ -15,7 +15,7 @@ const styles = {
 
 const Closets = () => {
   // Products
-  const {data, loading , error } = useQuery(QUERY_PRODUCTS);
+  const {data, loading, error } = useQuery(QUERY_PRODUCTS);
   if (error)
   console.log(error);
   return (
@@ -25,7 +25,7 @@ const Closets = () => {
       <Container>
       {loading 
       ? <div>Im loading...</div>
-      : <ItemsContainer  data={data}/>}
+      : <ItemsContainer data={data}/>}
       </Container>
     </div>
     </Link>

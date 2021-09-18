@@ -8,32 +8,16 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-<<<<<<< HEAD
-  
-=======
->>>>>>> main
     firstName: {
       type: String,
       required: false,
       unique: false,
-<<<<<<< HEAD
-
     },
-
-=======
-    },
->>>>>>> main
     lastName: {
       type: String,
       required: false,
       unique: false,
-<<<<<<< HEAD
-
     },
-
-=======
-    },
->>>>>>> main
     email: {
       type: String,
       required: true,
@@ -45,10 +29,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-<<<<<<< HEAD
-    
-=======
->>>>>>> main
   },
   // set this to use virtual below
   {}

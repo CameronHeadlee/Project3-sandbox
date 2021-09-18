@@ -15,7 +15,7 @@ export default function ItemsContainer (props) {
             <Card.Title>{product.name}</Card.Title>
             <Card.Text>
               {product.description}
-            </Card.Text>
+          </Card.Text>
           </Card.Body>
           <ListGroup className="list-group-flush">
             <ListGroupItem>Price: {product.price}</ListGroupItem>

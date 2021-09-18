@@ -48,10 +48,7 @@ const typeDefs = gql`
     products: [Products]
     me: User
     closet(_id: ID!): [Products]
-<<<<<<< HEAD
     
-=======
->>>>>>> main
   }
 
   type Mutation {
