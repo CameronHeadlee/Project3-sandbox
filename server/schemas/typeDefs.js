@@ -50,7 +50,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(firstName: String! lastName: String! username: String!, email: String!, password: String!): Auth
     updateProduct(_id: ID!, name: String!, description: String!, image: String!, price: Int!, quantity: Int!): Products
-    addComment(_id: ID!, commentText: String!, commentAuthor: String!, createdAt: String!)
+    addComment(_id: ID!, commentText: String!, commentAuthor: String!, createdAt: String!): Comment
     addToCart(_id: ID!, name: String!, description: String!, image: String!, price: Int!, quantity: Int!): Products
     removeProduct(_id: ID!, name: String!, description: String!, image: String!, price: Int!, quantity: Int!): Products
     updateCartQuantity(_id: ID!, name: String!, description: String!, image: String!, price: Int!, quantity: Int!): Products

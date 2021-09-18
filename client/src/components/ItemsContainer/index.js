@@ -3,12 +3,6 @@ import  Card  from 'react-bootstrap/Card';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const styles = {
-  card: {
-    boxShadow: '0 20 20 #020202'
-  }
-}
-
 export default function ItemsContainer (props) {
     console.log(props.data.products); 
       return (
