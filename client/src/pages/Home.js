@@ -5,6 +5,7 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import Container from 'react-bootstrap/Container';
 import ItemsContainer from '../components/ItemsContainer';
 import ReactPlayer from 'react-player';
+import NavBar from '../components/Navbar';
 
 const styles = {
   container: {
@@ -41,6 +42,7 @@ const Home = () => {
   return (
     <div style={styles.container}>
     <Container>
+      <NavBar/>
       <h1 style={styles.headerStyle}>Welcome to The Latest Pick Up!</h1>
       <p style={styles.textStyle}>At TheLPU our goal is to connect your passion for sneakers with others who feel the same. The Latest Pick Up is the place for you to show off and sell your shoes! Whether you just want the world to see what you have in your collection or you are trying to sell a pair TheLPU is here for you. As well as, being able to show off and sell you can also chat to others about their collection or anything sneaker related. Sneakerheads are hustlers and hustlers need a network. Join The Latest Pick Up to start copping and connecting.</p>
       <h3 style={styles.videoHeading}>How Michael Jordan Changed Sneaker Culture in Chicago | Sole Origins</h3>
