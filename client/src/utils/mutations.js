@@ -37,6 +37,6 @@ export const REMOVE_FROM_CART = gql`
 
 `;
 
-// export const UPDATE_CART_QUANTITY = gql` 
-//   mutation update
-// `;
+export const UPDATE_CART_QUANTITY = gql` 
+  mutation updateCartQuantity()
+`;

@@ -22,8 +22,10 @@ export const QUERY_PRODUCTS = gql`
 `;
 
 // export const QUERY_CLOSET = gql`
-//   { closet {
+//   { closet 
+//     {
 //     _id
-//   }}
+//     }
+// }
 // `;
-// make a query called 'closet' and the user closet or the closet receives an id 
+//make a query called 'closet' and the user closet or the closet receives an id 
