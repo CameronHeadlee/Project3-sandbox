@@ -1,35 +1,42 @@
 import React from 'react';
 import  Card  from 'react-bootstrap/Card';
-import  Button  from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import ListGroup from 'react-bootstrap/ListGroup';
+
+const styles = {
+  card: {
+    boxShadow: '0 20 20 #020202'
+  }
+}
 
 export default function ItemsContainer (props) {
     console.log(props.data.products); 
-    return (
-      <Row xs={1} md={2} className="g-4">
+      return (
+        <div className="d-flex align-content-center justify-content-between flex-wrap" >
         {props.data.products.map( product => {
           console.log(product)
-          return <Col> <Card style={{ width: '18rem' }}>
+          return <Card className="row p-5 m-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.image} />
           <Card.Body>
             <Card.Title>{product.name}</Card.Title>
             <Card.Text>
               {product.description}
-              {product.price}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Price: {product.price}</ListGroupItem>
+            <ListGroupItem>In Stock: {product.quantity}</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">My Closet</Card.Link>
           </Card.Body>
         </Card>
-        </Col>
+        
         }) 
         }
-        </Row>
+       </div>
+       
+        
+     
     )
   }   
-      
-      
-      
-    
-
-
