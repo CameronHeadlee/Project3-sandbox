@@ -12,7 +12,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
+import UserContainer from './components/UserView';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ItemsContainer from './components/ItemsContainer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -52,6 +54,7 @@ function App() {
         </Route>
         <Route exact path='/Closets'>
           <Closets/>
+          <UserContainer/>
         </Route>
         <Route exact path='/Login'>
           <Login/>
