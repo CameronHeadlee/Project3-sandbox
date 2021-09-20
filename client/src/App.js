@@ -11,10 +11,8 @@ import Closets from './pages/Closets';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
-import UserContainer from './components/UserView';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import ItemsContainer from './components/ItemsContainer';
+// import Header from './components/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,22 +44,14 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header>
-          <Navbar/>
-          </Header>
-        <Route exact path='/'>
-          <Home/>
-        </Route>
-        <Route exact path='/Closets'>
-          <Closets/>
-          <UserContainer/>
-        </Route>
-        <Route exact path='/Login'>
-          <Login/>
-        </Route>
-        <Route exact path='/Signup'>
-          <Signup/>
-        </Route>
+        <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Closets" component={Closets} />
+            <Route exact path="/Closets" component={Login} />
+            <Route exact path="/Closets" component={Signup} />
+            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          </Switch>
         </div>
       </Router>
         

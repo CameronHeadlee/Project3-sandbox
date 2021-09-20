@@ -6,6 +6,14 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      products {
+        _id
+        name
+        description
+        image
+        price
+        quantity
+      }
     }
   }
 `;
@@ -16,6 +24,7 @@ export const QUERY_PRODUCTS = gql`
     description
     image
     price
+    quantity
     }
   }
 `;
