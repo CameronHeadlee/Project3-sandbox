@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { User } = require('.');
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
@@ -22,6 +23,11 @@ const productSchema = new Schema({
         type: Number,
         min: 0,
         default: 0
+      },
+      userId: {
+        type: ID,
+        ref: 'User',
+        
       }
       // category: {
       //   type: Schema.Types.ObjectId,

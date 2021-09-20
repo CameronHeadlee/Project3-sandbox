@@ -29,9 +29,17 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+
+    // products: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Products',
+    //     required: false,
+    //   }
+    // ]
   },
   // set this to use virtual below
-  {}
+
 );
 // hash user password
 userSchema.pre('save', async function (next) {

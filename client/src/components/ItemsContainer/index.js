@@ -4,12 +4,14 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
+import UserView from '../components/UserView';
+
 
 export default function ItemsContainer () {
   const {data, loading , error } = useQuery(QUERY_PRODUCTS);
     if (loading) return <div>Im loading...</div>;
-    if (data) console.log(data);
-    // console.log(props.data?.products); 
+    //if (data) console.log(data);
+     console.log(props.data?.products); 
       return (
         <Card>
           <Card.Title>On the market</Card.Title>
