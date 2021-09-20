@@ -4,8 +4,6 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
-import UserView from '../components/UserView';
-
 
 const styles = {
   containerStyles: {
@@ -44,4 +42,4 @@ export default function ItemsContainer () {
        </div>
        </Card>
     )
-  }   
+  } 

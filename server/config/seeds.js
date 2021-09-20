@@ -1,5 +1,5 @@
 const db = require('./connection');
-const {User, Product } = require('../models');
+const { User, Products } = require('../models');
 
 db.once('open', async () => {
   
@@ -14,7 +14,7 @@ db.once('open', async () => {
    
   });
 
-  const { _id } = await User.create({
+  await User.create({
     firstName: 'Elijah',
     lastName: 'Holt',
     username: 'EHolt123',
@@ -23,7 +23,7 @@ db.once('open', async () => {
  
   });
 
-  const { id } = await User.create({
+  await User.create({
     firstName: 'Khadra',
     lastName: 'Shegow',
     username: 'KSheg123',
