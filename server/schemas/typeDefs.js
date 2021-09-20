@@ -9,6 +9,7 @@ const typeDefs = gql`
     email: String
     password: String
     orders: [Order]
+    products: [Products]
   }
 
   type Comment { 
@@ -39,7 +40,7 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: User
+    user: [Products]
   }
 
   # type closet {
