@@ -7,17 +7,19 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import UserView from '../components/UserView';
 
 
+const styles = {
+  containerStyles: {
+    background: '#04B0BD'
+  }
+}
 export default function ItemsContainer () {
   const {data, loading , error } = useQuery(QUERY_PRODUCTS);
     if (loading) return <div>Im loading...</div>;
-    //if (data) console.log(data);
-     console.log(props.data?.products); 
       return (
-        <Card>
+        <Card styles={styles.containerStyles}>
           <Card.Title>On the market</Card.Title>
         <div className="d-flex align-content-center justify-content-between  flex-wrap" >
         {data?.products.map( product => {
-          console.log(product)
           return <Card className="row p-5 m-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.image} />
           <Card.Body>

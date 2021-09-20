@@ -25,15 +25,9 @@ const productSchema = new Schema({
         default: 0
       },
       userId: {
-        type: ID,
-        ref: 'User',
-        
+        type: mongoose.ObjectId,
+        ref: 'User'
       }
-      // category: {
-      //   type: Schema.Types.ObjectId,
-      //   ref: 'Category',
-      //   required: true
-      // }
 });
 
 const Products= mongoose.model('Product', productSchema);
