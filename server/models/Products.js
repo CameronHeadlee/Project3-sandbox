@@ -24,10 +24,11 @@ const productsSchema = new Schema({
         default: 0
       },
       userId: {
-        type: mongoose.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
       }
+    
 });
 
-const Products = mongoose.model('Products', productsSchema);
+const Products = mongoose.model('Product', productsSchema);
 module.exports = Products;
