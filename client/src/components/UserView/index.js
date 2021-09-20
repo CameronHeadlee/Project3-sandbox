@@ -5,14 +5,14 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 
-export default function ItemsContainer () {
-  const {data, loading , error } = useQuery(QUERY_PRODUCTS);
+export default function UserContainer () {
+    const {data, loading , error } = useQuery(QUERY_PRODUCTS);
     if (loading) return <div>Im loading...</div>;
     if (data) console.log(data);
     // console.log(props.data?.products); 
       return (
         <Card>
-          <Card.Title>On the market</Card.Title>
+          <Card.Title>User Closets</Card.Title>
         <div className="d-flex align-content-center justify-content-between  flex-wrap" >
         {data?.products.map( product => {
           console.log(product)

@@ -1,9 +1,18 @@
 import React from 'react';
 
+const styles = {
+    HeaderColor: {
+        background: '#909595'
+    },
+    headerStyle: {
+        textAlign: 'left',
+        paddingTop: 20
+    }
+}
 function Header(props) {
     return (
-        <header>
-            <h1>TheLPU</h1>
+        <header style={styles.HeaderColor}>
+            <h1 style={styles.headerStyle}>TheL.P.U.</h1>
             {props.children}
         </header>
     )
