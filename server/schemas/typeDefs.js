@@ -6,7 +6,6 @@ const typeDefs = gql`
     username: String
     firstName: String
     lastName: String
-    username: String
     email: String
     password: String
     orders: [Order]
@@ -42,6 +41,11 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+
+  # type closet {
+  #   _id: ID
+  #   products: []
+  # }
 
 
   type Query {

@@ -3,12 +3,16 @@ import  Card  from 'react-bootstrap/Card';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-export default function ItemsContainer (props) {
+export default function ItemsContainer ({data, loading, error}) {
+  if (loading) return <div>
+    I'm loading...
+  </div>;
+  if (data) console.log(data);
     // console.log(props.data?.products); 
       return (
         <div className="d-flex align-content-center justify-content-between flex-wrap" >
-        {props.data?.products.map( product => {
-          console.log(product)
+        {data?.products.map( product => {
+          console.log(product);
           return <Card className="row p-5 m-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.image} />
           <Card.Body>

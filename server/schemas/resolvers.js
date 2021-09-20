@@ -22,9 +22,9 @@ const resolvers = {
       return products;
       
     },
-    product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('shoes');
-    }
+    // product: async (parent, { _id }) => {
+    //   return await Product.findById(_id).populate('shoes');
+    // }
   },
 
   Mutation: {
