@@ -42,7 +42,7 @@ const typeDefs = gql`
 
   type Query {
     products: [Products]
-    me: User
+    user: User
     closet(_id: ID!): [Products]
   }
 
