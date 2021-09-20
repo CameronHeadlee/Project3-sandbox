@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import ItemsContainer from '../components/ItemsContainer/index';
 import { Link } from 'react-router-dom';
 //import Card from "react-bootstrap/Card";
+//import ItemsContainer from '../components/ItemsContainer';
 
 const styles = {
   container: {

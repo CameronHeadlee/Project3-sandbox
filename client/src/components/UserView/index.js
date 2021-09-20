@@ -2,11 +2,8 @@ import React from 'react';
 import  Card  from 'react-bootstrap/Card';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_PRODUCTS } from '../../utils/queries';
 
-export default function ItemsContainer ({data, loading, error}) {
-  // const {data, loading, error } = useQuery(QUERY_PRODUCTS);
+export default function UserContainer ({data, loading, error}) {
   if (loading) return <div>
     I'm loading...
   </div>;
