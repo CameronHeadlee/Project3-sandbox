@@ -6,6 +6,14 @@ import LoginForm from '../../pages/Login';
 
 import Auth from '../../utils/auth';
 
+const styles = {
+  headingStyle: {
+    fontSize: 30,
+  },
+  titleStyle: {
+    color: '#ffdd00'
+  }
+}
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
@@ -15,24 +23,40 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
+            <div style={styles.headingStyle}>
+            <div style={styles.titleStyle}>
             TheL.P.U.
+            </div>
+            </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
+              <div style={styles.headingStyle}>
                 Home
+              </div>
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
+              
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/Closets'>
+                  <div style={styles.headingStyle}>
                     Closets
+                  </div>
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>
+                  <div style={styles.headingStyle}>
+                    Logout
+                  </div>
+                    </Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>
+                  <div style={styles.headingStyle}>
+                  Login/Sign Up
+                  </div>
+                  </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

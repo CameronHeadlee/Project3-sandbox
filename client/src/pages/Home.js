@@ -3,12 +3,13 @@ import React from "react";
 // import { useQuery } from '@apollo/client';
 // import { QUERY_PRODUCTS } from '../utils/queries';
 import ReactPlayer from 'react-player';
+import ItemsContainer from '../components/ItemsContainer';
 
 
 const styles = {
   homeStyle: {
-    backgroundColor: '#dc2f02',
-    height: '100vh'
+    background: '#dc2f02',
+    minHeight: '100vh'
   },
   textStyle: {
     fontSize: 25,
@@ -19,11 +20,13 @@ const styles = {
     marginLeft: 15
   },
   videoStyle: {
-    display: 'block',
+    position: 'relative',
+    background: '#dc2f02',
+    paddingTop: 20,
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '100%',
-    height: 'auto'
+    height: '100%'
   },
   headerStyle: {
     fontSize: 45,
@@ -33,10 +36,12 @@ const styles = {
   },
   videoHeading: {
     textAlign: 'center',
+    background: '#dc2f02',
     color: '#020202',
     paddingTop: 20,
-    paddingRight: 15,
-    paddingLeft: 15
+    paddingRight: 20,
+    paddingLeft: 20,
+    border: '8px dashed',
   }
 }
 
@@ -54,6 +59,7 @@ const Home = () => {
       <ReactPlayer style={styles.videoStyle}
           url="https://www.youtube.com/watch?v=1Wa5RpV1STg"
         />
+        <ItemsContainer/>
       </div>
   );
 };
