@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Products } = require('../models');
+const { User, Product } = require('../models');
 
 db.once('open', async () => {
   
@@ -35,9 +35,9 @@ db.once('open', async () => {
   console.log('users seeded');
 
 
-  await Products.deleteMany();
+  await Product.deleteMany();
 
-  const products = await Products.insertMany([
+  const products = await Product.insertMany([
     {
       name: 'New Balance 990v3 X Joe Freshgoods Outside Clothes',
       description:

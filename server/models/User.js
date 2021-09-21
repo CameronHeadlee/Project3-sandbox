@@ -38,7 +38,6 @@ const userSchema = new Schema(
     //   }
     // ]
   },
-  // set this to use virtual below
 
 );
 // hash user password
