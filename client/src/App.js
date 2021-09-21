@@ -51,7 +51,7 @@ function App() {
             <Route exact path="/Closets" component={Closets} />
             <Route exact path="/Closets" component={Login} />
             <Route exact path="/Closets" component={Signup} />
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+            <Route render={() => <h1 className="display-2">Please Login or Signup!</h1>} />
           </Switch>
         </div>
       </Router>

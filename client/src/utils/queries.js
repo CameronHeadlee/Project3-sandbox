@@ -25,6 +25,11 @@ export const QUERY_PRODUCTS = gql`
     image
     price
     quantity
+    userId {
+      _id
+      username
+      email
+    }
     }
   }
 `;
