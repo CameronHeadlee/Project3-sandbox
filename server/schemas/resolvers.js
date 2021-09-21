@@ -17,7 +17,7 @@ const resolvers = {
     products: async () => {
       //wrap in try and catch
       try {
-      const products = await Products.find().populate('userId');
+      const products = await Product.find().populate('userId');
       console.log(products);
       return products;
       } catch (error) { 
