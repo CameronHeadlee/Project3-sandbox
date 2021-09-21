@@ -44,6 +44,7 @@ function Shoe() {
     <group
       ref={ref}
       dispose={null}
+      scale={[2,2,2]}
       >
       <mesh receiveShadow castShadow geometry={nodes.shoe.geometry} material={materials.laces} material-color={snap.items.laces} />
       <mesh receiveShadow castShadow geometry={nodes.shoe_1.geometry} material={materials.mesh} material-color={snap.items.mesh} />
@@ -63,13 +64,14 @@ function Box(props) {
    const [hovered, setHover] = useState(false)
    const [active, setActive] = useState(false)
    // Subscribe this component to the render-loop, rotate the mesh every frame
-   useFrame((state, delta) => (mesh.current.rotation.x += 0.01))
+   useFrame((state, delta) => (mesh.current.rotation.y -= 0.005))
    // Return view, these are regular three.js elements expressed in JSX
    return (
      <mesh
        {...props}
        ref={mesh}
-       scale={active ? 0.5 : 0.8}
+       scale={1.5}
+       position={[0,-.2,0]}
        onClick={(event) => setActive(!active)}
        onPointerOver={(event) => setHover(true)}
        onPointerOut={(event) => setHover(false)}
@@ -78,12 +80,12 @@ function Box(props) {
       
        
      >
-       <boxGeometry args={[1.3, 1.3, 1.3]} />
+       <boxGeometry args={[2.4, 1.2, 1.2]} />
        <meshPhongMaterial      
-       opacity={0.4}
+       opacity={0.7}
        transparent={true}
        metalness={1} 
-       color={'white'} 
+       color={'yellow'} 
       />
      </mesh>
    )
@@ -93,11 +95,11 @@ export default function App() {
 
   return (
     <>
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }} style={{position:"absolute"}} castShadow>
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 50 }} style={{position:"absolute"}} castShadow>
         <ambientLight intensity={0.7} />
         <spotLight intensity={0.5}  angle={2.1} penumbra={1} position={[-1, 1, -5]} castShadow />
         <Suspense fallback={null}>
-          <Box />
+          {/* <Box /> */}
           <Shoe />
           <Environment preset="city" />
           <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.25} width={10} height={10} blur={1.5} far={0.8} />
