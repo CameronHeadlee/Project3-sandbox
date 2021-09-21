@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import Button from 'react-bootstrap/Button';
-
+import ShoeBackground from '../ShoeBackground';
 
 const styles = {
   headerStyle: {
@@ -25,8 +25,9 @@ export default function ItemsContainer () {
             <h1>On the market</h1>
           </div>
         <div className="d-flex justify-content-center flex-wrap" >
+           <ShoeBackground />
         {data?.products.map( product => {
-          return <Card className="row p-1 m-1" style={{ width: '18rem' }}>
+          return <Card className="row p-1 m-3" style={{ width: '18rem', background: '#fffd'}}>
           <Card.Img variant="top" src={product.image} />
           <Card.Body>
             <Card.Title>{product.name}</Card.Title>
