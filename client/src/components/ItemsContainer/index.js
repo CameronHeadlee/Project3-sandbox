@@ -4,19 +4,24 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
+import ShoeBackground from "../ShoeBackground"
 
 const styles = {
   containerStyles: {
-    background: '#04B0BD'
+    background: '#04B0BD',
+  },
+  shoeContainer: {
+     position: "relative"
   }
 }
 export default function ItemsContainer () {
   const {data, loading , error } = useQuery(QUERY_PRODUCTS);
     if (loading) return <div>Im loading...</div>;
       return (
-        <Card styles={styles.containerStyles}>
+         <Card styles={styles.containerStyles}>
+           <ShoeBackground />
           <Card.Title>On the market</Card.Title>
-        <div className="d-flex align-content-center justify-content-between  flex-wrap" >
+        <div className="d-flex align-content-center justify-content-between  flex-wrap" style={styles.shoeContainer}>
         {data?.products.map( product => {
           return <Card className="row p-5 m-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.image} />
