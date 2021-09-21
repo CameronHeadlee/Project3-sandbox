@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const productsSchema = new Schema({
     name: {
         type: String,
+        unique: true,
         required: true,
         trim: true
       },
@@ -24,7 +25,7 @@ const productsSchema = new Schema({
         default: 0
       },
       userId: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
       }
     

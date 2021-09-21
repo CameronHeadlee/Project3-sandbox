@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
-import ItemsContainer from '../components/ItemsContainer';
+// import ItemsContainer from '../components/ItemsContainer';
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from '../utils/queries';
 import UserView from '../components/UserView';
+import ProductForm from '../components/ProductForm';
 
 const styles = {
   container: {
-    background: '#488840',
+    background: '#04B0BD',
     display: 'block',
     margin: '0 auto'
-  }
-}
+  },
+  headerStyle: {
+    textAlign: 'center',
+    paddingTop: 25,
+    textDecoration: 'underline wavy 8px #ffdd00'
+    }
+};
 
 const Closets = () => {
 
@@ -23,9 +29,9 @@ const Closets = () => {
   return (
     <div style={styles.container}>
      <Container>
-      <h2>My Closet</h2>
+      <h2 style={styles.headerStyle}>My Closet</h2>
+      <ProductForm/>
       {loading ? <div>Im loading...</div> : data.me ? <UserView/> : <></>}
-       <ItemsContainer/>
       </Container>
     </div>
     

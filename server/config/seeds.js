@@ -14,7 +14,7 @@ db.once('open', async () => {
    
   });
 
-    await User.create({
+     await User.create({
     firstName: 'Elijah',
     lastName: 'Holt',
     username: 'EHolt123',

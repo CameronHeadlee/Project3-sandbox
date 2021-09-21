@@ -17,16 +17,13 @@ const resolvers = {
     products: async () => {
       //wrap in try and catch
       try {
-      const products = await Products.find().populate('user');
+      const products = await Products.find().populate('userId');
       console.log(products);
       return products;
       } catch (error) { 
         console.log(error);
       }
     },
-    // product: async (parent, { _id }) => {
-    //   return await Products.findById(_id).populate('shoes');
-    // }
   },
 
   Mutation: {
